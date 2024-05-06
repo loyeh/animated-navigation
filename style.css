@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100dvw;
+  height: 100dvh;
+  position: relative;
+}
+
+.up,
+.down {
+  width: 100%;
+  height: 50%;
+}
+
+.up {
+  background-color: #bbffff;
+}
+
+.down {
+  background-color: #2255f8;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #00000022, -2px -2px 5px #00000022,
+    2px -2px 2px #00000022, -2px 2px 2px #00000022;
+  transition: 2s ease-in-out;
+}
+
+.container .links {
+  margin-inline: 10px;
+  text-decoration: none;
+  color: gray;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn::after {
+  content: "";
+  width: 20px;
+  height: 3px;
+  border-radius: 100px;
+  background-color: #2255f8;
+  transform: rotate(45deg);
+  position: absolute;
+
+}
+
+.btn::before {
+  content: "";
+  width: 20px;
+  height: 3px;
+  border-radius: 100px;
+  background-color: #2255f8;
+  transform: rotate(-45deg);
+  position: absolute;
+}
+
+@keyframes mymove {
+  0% {
+    transform: scale(-1, 1);
+    left: 0px;
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1, 1);
+    left: 50px;
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(-1, 1);
+    left: 100px;
+    opacity: 0.5;
+  }
+  75% {
+    transform: scale(1, 1);
+    left: 150px;
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(-1, 1);
+    left: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes mymove2 {
+  0% {
+    transform: rotate(135deg);
+    left: -25px;
+    top: -1px;
+  }
+  25% {
+    transform: rotate(270deg);
+    left: -50px;
+    top: -2px;
+  }
+  50% {
+    transform: rotate(425deg);
+    left: -75px;
+    top: -3px;
+  }
+  75% {
+    transform: rotate(560deg);
+    left: -100px;
+    top: -4px;
+  }
+  100% {
+    transform: rotate(720deg);
+    left: -130px;
+    top: -5px;
+  }
+}
+
+@keyframes mymove3 {
+    0% {
+      transform: rotate(-135deg);
+      left: -25px;
+      top: 1px;
+    }
+    25% {
+      transform: rotate(-270deg);
+      left: -50px;
+      top: 2px;
+    }
+    50% {
+      transform: rotate(-425deg);
+      left: -75px;
+      top: 3px;
+    }
+    75% {
+      transform: rotate(-560deg);
+      left: -100px;
+      top: 4px;
+    }
+    100% {
+      transform: rotate(-720deg);
+      left: -130px;
+      top: 5px;
+    }
+  }
+
+.container .links.active {
+  animation: mymove 2s ease-in-out;
+  animation-fill-mode: forwards;
+  /* display: none; */
+}
+.container.active {
+  width: 70px;
+  transition: width 2s ease-in-out;
+}
+.btn.active{
+    top:10px;
+}
+
+.btn.active::after{
+    animation: mymove3 2s ease-in-out  forwards;
+}
+
+.btn.active::before{
+    animation: mymove2 2s ease-in-out  forwards;
+}
