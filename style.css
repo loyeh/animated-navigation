@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient( #ccccff 0 50%, #2255f8 50% 100%);
+  background: linear-gradient(#ccccff 0 50%, #2255f8 50% 100%);
 }
 
 .container {
@@ -26,7 +26,7 @@
   align-items: center;
   border-radius: 5px;
   box-shadow: 0px 0px 5px #00000022;
-  transition:2s ease-in-out;
+  transition: 2s ease-in-out;
   position: relative;
 }
 
@@ -36,26 +36,22 @@
   color: gray;
   font-weight: 600;
   cursor: pointer;
-  transition:2s ease-in-out;
-
+  transition: 2s ease-in-out;
 }
 
 .btn {
   width: 55px;
   height: 55px;
   cursor: pointer;
-  /* margin-left: 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   right: 0;
-
-  /* background-color: #bbffff; */
-
 }
 
-.line1,.line2{
+.line1,
+.line2 {
   position: absolute;
   width: 20px;
   height: 3px;
@@ -63,28 +59,27 @@
   transition: 2s ease-in-out;
 }
 
-.line1{
+.line1 {
   transform: rotate(45deg);
 }
 
-.line2{
+.line2 {
   transform: rotate(-45deg);
 }
 
-.container.active{
+.container.active {
   width: 57px;
 }
 
-.links.active{
+.links.active {
   transform: rotateY(540deg);
   opacity: 0;
 }
 
-.line2.active{
+.line2.active {
   transform: rotateZ(720deg) translateY(4px);
-
 }
 
-.line1.active{
+.line1.active {
   transform: rotateZ(-720deg) translateY(-4px);
 }
